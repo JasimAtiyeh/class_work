@@ -9,6 +9,7 @@
 User.destroy_all
 Artwork.destroy_all
 ArtworkShare.destroy_all
+Comment.destroy_all
 
 u1 = User.create!(username: "Johndoe")
 u2 = User.create!(username: "Jackdoe")
@@ -26,3 +27,8 @@ ArtworkShare.create!(artwork_id: a1.id, viewer_id: u4.id)
 ArtworkShare.create!(artwork_id: a2.id, viewer_id: u3.id)
 ArtworkShare.create!(artwork_id: a3.id, viewer_id: u2.id)
 ArtworkShare.create!(artwork_id: a4.id, viewer_id: u1.id)
+
+c1 = Comment.create!(artwork_id: a1.id, author_id: u4.id, body: "It sucks")
+c2 = Comment.create!(artwork_id: a2.id, author_id: u3.id, body:"Beautiful")
+c3 = Comment.create!(artwork_id: a3.id, author_id: u2.id, body:"I don't understand")
+c4 = Comment.create!(artwork_id: a4.id, author_id: u1.id, body:"Marvelous")
