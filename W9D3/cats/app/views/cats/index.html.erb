@@ -1,0 +1,17 @@
+<h1>All the cats!!</h1>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">All the cats!!</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%@cats.each do |cat| %>
+        <tr>
+            <td ><a href="<%= cat_url(cat.id) %>">
+            <%= cat.name %></a></td>
+            <td><%= cat.color %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
