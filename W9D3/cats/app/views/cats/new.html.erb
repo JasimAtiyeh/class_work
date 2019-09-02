@@ -1,5 +1,7 @@
 <h1>Add a new Cat</h1>
 
+<%= render 'form' %>
+
 <form action="<%= cats_url %>" method="POST">
 
 <label for="name">Cats Name</label>
@@ -7,12 +9,12 @@
 <br>
 
 <label for="sex">Cats sex</label>
-<input type="radio" id="sex" name="@cat[sex]" value="M"> Male 
-<input type="radio" id="sex" name="@cat[sex]" value="F"> Female
+<input type="radio" id="sex" name="cat[sex]" value="M"> Male 
+<input type="radio" id="sex" name="cat[sex]" value="F"> Female
 <br>
 
 <label for="color">Cats color</label>
-<select name="@cat[color]" id="color">
+<select name="cat[color]" id="color">
     <option value="disabled" selected>Please select color</option>
     <%Cat::COLORS.each do |color|%>
     <option value="<%=color%>"><%=color%></option>
@@ -21,12 +23,12 @@
 <br>
 
 <label for="birth_date">Birth Date</label>
-<input type="date" name="@cat[birth_date]" id="birth_date" value="2019-08-28"
+<input type="date" name="cat[birth_date]" id="birth_date" value="2019-08-28"
   min="1999-08-28" max="2039-08-28">
 <br>
 
 <label for="description">Cat Description</label>
-<textarea name="@cat[description]" id="description"> </textarea>
+<textarea name="cat[description]" id="description"> </textarea>
 <br>
 
 <button type="submit">Add cat!</button>

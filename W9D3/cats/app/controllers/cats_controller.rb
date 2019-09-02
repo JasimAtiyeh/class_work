@@ -6,7 +6,7 @@ class CatsController < ApplicationController
     end
 
     def show
-      @cat = Cat.find_by(id: params[:id])
+      @cat = Cat.find(params[:id])
       
       if @cat
         render :show
@@ -15,8 +15,9 @@ class CatsController < ApplicationController
       end
     end
 
-    def update
-
+    def edit
+      @cat = Cat.find(params[:id])
+      render :edit
     end
 
     def new
