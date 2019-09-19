@@ -1,0 +1,33 @@
+/* PHASE 9: Forms */
+.content-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.post {
+  background-color: lightgray;
+  width: 520px;
+  border: 1px solid darkgray;
+  border-radius: 3px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+  height: fit-content;
+}
+
+.post input, textarea {
+  background-color: white;
+  width: 100%;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.post div {
+  margin-bottom: 20px;
+}
+
+.post-submit {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #00cc00;
+}
