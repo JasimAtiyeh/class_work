@@ -1,0 +1,98 @@
+#main{
+  width: 21% ;
+  margin: 0 auto;
+}
+
+h1{
+  text-align: center; 
+}
+
+p{
+  text-align: center;
+}
+.board{ 
+  border: 1px solid black;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.tile{
+  height: 25px;
+  width: 100%;
+  /* border: 1px lightgrey; */
+  background: lightgrey;
+  border-style: outset;
+  border-width: 2px;
+}
+
+.explored{
+  border-style: inset;
+  text-align: center;
+  font-size: 14px;
+}
+
+._1{
+  color: blue;
+}
+
+._2{
+  color: green;
+}
+
+._3{
+  color: red;
+}
+
+._4{
+  color: purple;
+}
+
+._5{
+  color: orange;
+}
+
+.bombed, .flagged{
+  text-align: center;
+  background-color: red;
+}
+
+.modal-undefined {
+  display: none;
+  /* border: 1px solid gray; */
+}
+
+.modal-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px black solid;
+}
+
+.modal-content {
+  text-align: center;
+  background: white;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5%;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+.js-modal-open {
+  display: block;
+}
+
+.js-modal-close {
+  display: none;
+}

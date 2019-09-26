@@ -6,9 +6,21 @@
     "webpack": "webpack --mode=development --watch"
   },
   "dependencies": {
+    "react": "^16.9.0",
+    "redux": "^4.0.4",
     "webpack": "^4.6.0"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.4"
-  }
+  },
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
