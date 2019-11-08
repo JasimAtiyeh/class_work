@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const db = require("../config/keys.js").MONGO_URI;
 const expressGraphQL = require("express-graphql");
 const schema = require("./schema/schema");
+const cors = require("cors");
+
 
 const app = express();
 
@@ -20,12 +22,19 @@ mongoose
 
 app.use(bodyParser.json());
 
+app.use(cors());
 
 app.use(
   "/graphql",
-  expressGraphQL({
-    schema,
-    graphiql: true
+  // now we are accepting the request in our middleware
+  expressGraphQL(req => {
+    return {
+      schema,
+      context: {
+        token: req.headers.authorization
+      },
+      graphiql: true
+    };
   })
 );
 

@@ -77,6 +77,7 @@ const login = async data => {
 
     if (bcrypt.compareSync(password, user.password)){
       const token = jwt.sign({ id: user._id }, keys.secretOrKey);
+      console.log(token);
       return { token, loggedIn: true, ...user._doc, password: null };
     }
   } catch(err){
@@ -86,11 +87,12 @@ const login = async data => {
 
 const verifyUser = async data => {
   try {
+    console.log(data);
     const { token } = data;
 
     const decoded = jwt.verify(token, keys.secretOrKey);
     const { id } = decoded;
-
+    console.log(id);
     const loggedIn = await User.findById(id).then(user => {
       return user ? true : false;
     })

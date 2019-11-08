@@ -44,15 +44,26 @@ const mutation = new GraphQLObjectType({
       type: ProductType,
       args: {
         name: { type: GraphQLString },
-        category: { type: GraphQLID },
+        // category: { type: GraphQLID },
         description: { type: GraphQLString },
         weight: { type: GraphQLInt }
       },
-      resolve(parentValue, { name, category, description, weight }) {
-        return axios(authOptions).then(res => {
-          let cost = res.data.cost;
-          return new Product({ name, category, description, weight, cost }).save();
-        })
+      async resolve(_, { name, description, weight }, ctx) {
+        console.log(AuthService);
+        console.log(ctx);
+        const validUser = await AuthService.verifyUser({
+          token: ctx.token
+        });
+        console.log(validUser);
+        debugger;
+        if (validUser.loggedIn) {
+          return axios(authOptions).then(res => {
+            let cost = res.data.cost;
+            return new Product({ name, description, weight, cost }).save();
+          });
+        } else {
+          throw new Error('Sorry, you need to be logged in to create a product.');
+        }
       }
     },
     deleteProduct: {
