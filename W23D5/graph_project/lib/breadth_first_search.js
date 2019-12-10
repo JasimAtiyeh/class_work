@@ -1,7 +1,8 @@
-function breadthFirstSearch(startingNode, targetVal, visited = new Set()) {
+function breadthFirstSearch(startingNode, targetVal) {
+    let visited = new Set();
     let queue = [startingNode];
 
-    while (queue.length) {
+    while (queue.length > 0) {
         let node = queue.shift();
         if (visited.has(node)) continue;
         visited.add(node);
